@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create post</title>
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="/assets/CDN/fontawesome-free-5.15.3-web/js/all.js">
+    <link rel="stylesheet" href="/assets/CDN/fontawesome-free-5.15.3-web/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
+
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    
+    #main {
+        height: 100vh;
+        width: 100vh;
+        background-color: antiquewhite;
+    }
+    
+    .form {
+        padding-top: 10px;
+    }
+    
+    .form table tr {
+        padding: 5px;
+        margin-top: 10px;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-md navigation">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">
+            <img src="/assets/img/label.png" style="width: 200px;" alt="">
+        </a>
+
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="fa fa-bars toggle"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav links">
+                <li class="nav-item ">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="login.html">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="signup.html">Signup</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container text-center main">
+        <form action="" class="form">
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Title</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Cover Image</label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+            <input type="submit" name="submit" id="submit" class="btn btn-primary mb-2">
+        </form>
+    </div>
+    <footer class="con">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6">
+                    <img src="/assets/img/label.png" class="w-50 p-3" alt="">
+                </div>
+                <div class="col-6">
+                    <ul style="list-style: none;" class="links">
+                        <li>
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="">About</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="login.html">Login</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="signup.html">SignUp</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="">Contact us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 bg-dark">
+                    <h6 class="text-center text-light"> <i class="fa fa-copyright"></i> 2022 Lazydevs</h6>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
