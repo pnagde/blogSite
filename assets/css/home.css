@@ -20,6 +20,12 @@
     --gray-me: #535452;
 }
 
+.btn {
+    color: #fff;
+    background-color: var(--pp);
+    border-color: var(--gray-me);
+}
+
 .main-heading {
     background-color: var(--gray-me);
     color: var(--pure-white);
