@@ -24,7 +24,7 @@
     <nav class="navbar navbar-expand-md navigation">
         <!-- Brand -->
         <a class="navbar-brand" href="#">
-            <img src="/assets/img/label.png" style="width: 200px;" alt="">
+            <img th:src="@{/img/label.png}" style="width: 200px;" alt="">
         </a>
 
         <!-- Toggler/collapsibe Button -->
@@ -36,13 +36,7 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav links">
                 <li class="nav-item ">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="login.html">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="signup.html">Signup</a>
+                    <a class="nav-link" th:href="@{/}">Home</a>
                 </li>
             </ul>
         </div>
@@ -50,17 +44,18 @@
     <div class="container-fluid main">
         <div class="row">
             <div class="col-sm-12 main-heading">
-                <img src="/assets/img/label.png" alt="" style=" height: 100%; width: 100%; display: block;">
+                <img th:src="@{/img/label.png}" alt="" style=" height: 100%; width: 100%; display: block;">
             </div>
         </div>
         <div class="row w-100 ">
         </div>
         <div class="row ">
-            <div class="col-sm-12">
+            <div class="col-sm-12" th:object="${blog}">
                 <article>
                     <section>
-                        <h1 class="display-6 ">Blog Title</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id dolorem quo molestiae aperiam blanditiis amet odio cupiditate esse odit, nisi obcaecati voluptatibus ipsum. Debitis cupiditate maiores natus, iste ipsum eveniet.</p>
+                        <h1 class="display-6 " th:text="${blog.title}"></h1>
+                        <p th:text="${blog.description}"></p>
+                        <p th:text="${blog.byUserId}"></p>
                     </section>
                 </article>
             </div>
@@ -70,7 +65,7 @@
         <div class="container-fluid ">
             <div class="row ">
                 <div class="col-6 ">
-                    <img src="/assets/img/label.png " class="w-50 p-3 " alt=" ">
+                    <img th:src="@{/img/label.png}" class="w-50 p-3 " alt=" ">
                 </div>
                 <div class="col-6 ">
                     <ul style="list-style: none; " class="links ">
@@ -79,12 +74,6 @@
                         </li>
                         <li>
                             <a class="nav-link " href=" ">About</a>
-                        </li>
-                        <li>
-                            <a class="nav-link " href="login.html ">Login</a>
-                        </li>
-                        <li>
-                            <a class="nav-link " href="signup.html ">SignUp</a>
                         </li>
                         <li>
                             <a class="nav-link " href=" ">Contact us</a>

@@ -34,10 +34,13 @@
                     <a class="nav-link active" th:href="@{/}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/login}">Login</a>
+                    <a class="nav-link" th:if="${session.isValid==false}" th:href=" @{/login} ">Login</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link " th:if="${session.isValid==false}" th:href="@{/signup}">Signup</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/signup}">Signup</a>
+                    <a class="nav-link " th:if="${session.currentUser!=null}" th:href="@{/create}">Create Blog</a>
                 </li>
             </ul>
         </div>
@@ -59,21 +62,23 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="card col-md-4 m-4">
+            <div class="card col-md-12 m-4" th:each="blog : ${blogs}" th:if="@{blogs!=null}">
                 <div class="col-mb-4">
                     <img class="card-img-top" th:src="@{/img/logo.png}" style="height: 225px;
-                    width: 100%;
+                    width: fit-content;
                     display: block;" alt="">
                     <div class="card-body">
                         <div class="card-text">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero amet nulla perspiciatis illum, ratione, suscipit odit enim eligendi similique ipsa maxime fuga earum officia? Autem ea fuga accusantium temporibus ipsum!</p>
+                            <h1 th:text="${blog.title}"></h1>
+                            <p th:text="${blog.description}"></p>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <form th:action="@{/view}">
+                                <form th:action="@{'/view/'+${blog.blogId}}">
                                     <input type="submit" class="btn btn-sm btn-outline-secondary" value="View" />
                                 </form>
                             </div>
+                            <p th:text="${blog.byUserId}">by</p>
                         </div>
                     </div>
                 </div>

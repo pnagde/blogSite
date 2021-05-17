@@ -39,7 +39,7 @@
     <nav class="navbar navbar-expand-md navigation">
         <!-- Brand -->
         <a class="navbar-brand" href="#">
-            <img src="/assets/img/label.png" style="width: 200px;" alt="">
+            <img th:src="@{/img/label.png}" style="width: 200px;" alt="">
         </a>
 
         <!-- Toggler/collapsibe Button -->
@@ -51,32 +51,32 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav links">
                 <li class="nav-item ">
-                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" th:href="@{/}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="login.html">Login</a>
+                    <a class="nav-link active" th:href="@{/login}">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="signup.html">Signup</a>
+                    <a class="nav-link" th:href="@{/signup}">Signup</a>
                 </li>
             </ul>
         </div>
     </nav>
     <div class="container text-center main">
-        <form action="" class="form">
-            <img class="mb-4" src="/assets/img/logo.png" alt="" width="72" height="72">
+        <form action="#" class="form" th:action="@{/createblog}">
+            <img class="mb-4" th:src="@{/img/logo.png}" alt="" width="72" height="72">
             <h1 class="h3 mb-3 font-weight-normal">Create your Post</h1>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Title</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title">
+                <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="Title" required>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+                <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="6" required></textarea>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlFile1">Cover Image</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                <input name="file" type="file" class="form-control-file" id="exampleFormControlFile1">
             </div>
             <input type="submit" name="submit" id="submit" class="btn btn-primary mb-2">
         </form>
@@ -85,21 +85,21 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-6">
-                    <img src="/assets/img/label.png" class="w-50 p-3" alt="">
+                    <img th:src="@{/img/label.png}" class="w-50 p-3" alt="">
                 </div>
                 <div class="col-6">
                     <ul style="list-style: none;" class="links">
                         <li>
-                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link" th:href="@{/}">Home</a>
                         </li>
                         <li>
                             <a class="nav-link" href="">About</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="login.html">Login</a>
+                            <a class="nav-link" th:href="@{/login}">Login</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="signup.html">SignUp</a>
+                            <a class="nav-link" th:href="@{/signup}">SignUp</a>
                         </li>
                         <li>
                             <a class="nav-link" href="">Contact us</a>
