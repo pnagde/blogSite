@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 
@@ -23,8 +24,12 @@ public class Blog {
     @Column(name = "description" ,length = 2000000)
     private String description;
     
-    @Column(name = "imageUrl")
-    private String imageUrl;
+    @Lob
+    @Column(name = "image")
+    private String imageFile;
+
+    @Column(name = "imageName")
+    private String imageName;
 
     @Column(name = "postBy")
     private String byUserId;
@@ -32,11 +37,12 @@ public class Blog {
     public Blog() {
     }
 
-    public Blog(long blogId, String title, String description, String imageUrl, String byUserId) {
+    public Blog(long blogId, String title, String description,String imageFile, String imageName, String byUserId) {
         this.blogId = blogId;
         this.title = title;
         this.description = description;
-        this.imageUrl = imageUrl;
+        this.imageFile = imageFile;
+        this.imageName = imageName;
         this.byUserId = byUserId;
     }
 
@@ -64,12 +70,20 @@ public class Blog {
         this.description = description;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getImageFile() {
+        return imageFile;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setImageFile(String imageFile) {
+        this.imageFile = imageFile;
+    }
+
+    public String getImageName() {
+        return imageName;
+    }
+
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
     }
 
     public String getByUserId() {

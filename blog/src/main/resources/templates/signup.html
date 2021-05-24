@@ -83,8 +83,7 @@
                 <div class="form-group col-md-4">
                     <label for="inputState">State</label>
                     <select id="inputState" name="state" class="form-control">
-                      <option selected>Choose...</option>
-                      <option></option>
+                      <option th:each=" state: ${states}" th:value="${state.cityName}" th:text="${state.cityName}"></option>
                     </select>
                 </div>
                 <div class="form-group col-md-2">

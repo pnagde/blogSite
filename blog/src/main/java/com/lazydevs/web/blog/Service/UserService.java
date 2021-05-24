@@ -5,6 +5,7 @@ import com.lazydevs.web.blog.Repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserService {
@@ -36,5 +37,9 @@ public class UserService {
     } 
     public User findByUserId(long id){
         return repository.findById(id).get();
+    }
+    public void updateUser(String username,String emailId,String address,
+    String city,String state,int zipcode,long id){
+        repository.update(username, emailId, address, city, state, zipcode, id);
     }
 }

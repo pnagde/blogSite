@@ -20,6 +20,18 @@
     --gray-me: #535452;
 }
 
+.dropdown-menu .dropdown-item {
+    color: var(--pp);
+}
+
+#username {
+    color: var(--pure-white);
+}
+
+#username:hover {
+    color: var(--gray-me);
+}
+
 .btn {
     color: #fff;
     background-color: var(--pp);
